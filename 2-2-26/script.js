@@ -111,5 +111,4 @@ const quotes = [
 // 6
 
 let a = quotes.filter((h) => h.tags.includes("success"));
-
 console.log(a);
