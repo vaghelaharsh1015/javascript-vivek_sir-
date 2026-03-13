@@ -7,7 +7,7 @@
 
 // console.log("hello world");
 // console.log("123");
-  
+
 // setTimeout(() => {
 //   console.log("hello world");
 // }, 2000);
@@ -37,7 +37,6 @@
 // }
 
 // fun2();
-
 
 setTimeout(() => {
   console.log("1. Cultivation & Harvesting");

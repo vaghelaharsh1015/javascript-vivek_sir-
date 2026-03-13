@@ -1,0 +1,245 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#taskForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+#taskForm textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 80px;
+}
+
+#taskForm button {
+  grid-column: span 2;
+  padding: 15px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#taskForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.filter {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #e9ecef;
+  border-radius: 8px;
+}
+
+.filter label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.filter select,
+.filter input {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+}
+
+.task {
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.task::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #667eea;
+}
+
+.task:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.task h3 {
+  margin: 0 0 10px 0;
+  color: #343a40;
+  font-size: 1.2em;
+}
+
+.task p {
+  margin: 5px 0;
+  color: #6c757d;
+}
+
+.task .priority {
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+
+.task .priority.low {
+  background: #d4edda;
+  color: #155724;
+}
+
+.task .priority.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.task .priority.high {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.task .actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.task button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.task .edit {
+  background-color: #28a745;
+  color: white;
+}
+
+.task .edit:hover {
+  background-color: #218838;
+}
+
+.task .delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.task .delete:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  #taskForm {
+    grid-template-columns: 1fr;
+  }
+
+  #taskForm textarea {
+    grid-column: span 1;
+  }
+
+  #taskForm button {
+    grid-column: span 1;
+  }
+
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task .actions {
+    flex-direction: column;
+  }
+}
+
+.task .delete:hover {
+  background-color: #c82333;
+}
